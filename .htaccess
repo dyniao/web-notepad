@@ -1,0 +1,12 @@
+Options -Indexes
+RewriteEngine On
+RewriteRule ^([\w_-]+)$ index.php?note=$1
+
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag: "noindex, nofollow"
+</IfModule>
+
+<Files "docker-compose.yml">  
+    Order Allow,Deny
+    Deny from all
+</Files>
